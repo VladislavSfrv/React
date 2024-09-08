@@ -1,0 +1,11 @@
+.mood{
+    color: red;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.message{
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid black;
+    background-color: bisque;
+}

@@ -1,0 +1,16 @@
+.card{
+    background-color: rgb(58, 47, 47);
+    color: white;
+}
+
+.light{
+    color: black;
+    background-color: white;;
+    transition: background-color 1s ease;
+}
+
+.dark{
+    color: white;
+    background-color: rgb(0, 0, 0);
+    transition: background-color 1s ease;
+}

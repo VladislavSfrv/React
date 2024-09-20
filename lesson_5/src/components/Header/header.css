@@ -1,0 +1,25 @@
+*{
+    margin: 0px;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    width: 100%;
+    padding: 10px 0px;
+    background-color: cadetblue;
+}
+
+.header-text{
+    font-size: 24px;
+    color:rgb(125, 66, 125);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+    transition: color 0.5s ease;
+    &:hover{
+        color: red;
+        transform: scale(1.1);
+    }
+}

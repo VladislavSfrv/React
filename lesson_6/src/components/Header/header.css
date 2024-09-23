@@ -1,0 +1,50 @@
+*{
+    margin: 0px;
+}
+
+.header{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 24px;
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 320px;
+    min-height: 10vh;
+    position: sticky;
+    top: 0px;
+}
+
+.squares__item:last-of-type {
+    position: sticky;
+}
+
+.header-link{
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-left: 10px;
+    &:hover{
+        color: yellow;
+        transform: scale(1.1);
+    }
+    &:active{
+        color: red;
+    }
+}
+
+.header-input{
+    border-radius: 8px;
+    padding: 0.6em 1.2em;
+    margin-right: 10px;
+    font-size: 24px;
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    &:hover{
+        border: 2px solid yellow;
+    }
+}

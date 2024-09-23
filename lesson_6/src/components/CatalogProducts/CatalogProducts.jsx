@@ -1,4 +1,4 @@
-import { addProduct, deleteProduct } from "../../redux/slices/productsSlice";
+import { deleteProduct } from "../../redux/slices/productsSlice";
 import Button from "../Button/Button";
 import { useDispatch, useSelector } from "react-redux";
 import "./catalogProducts.css"
@@ -6,14 +6,8 @@ import "./catalogProducts.css"
 function CatalogProducts() {
     const products = useSelector(state => state.products.products);
     const dispatch = useDispatch();
-
-    const handleAddProduct = (e) => {
-        e.preventDefault();
-        dispatch(addProduct());
-    }
-
+    
     return (<div>
-        <Button nameClass = {"add-btn products-add-btn"}handlerClick={handleAddProduct}>Добавить продукт</Button>
         <h1 className="title-products">Каталог продуктов</h1>
         {products.map((product) => {
             return(

@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
 const initialState = {
     products: []
 }
@@ -10,10 +11,10 @@ const productSlice = createSlice({
         addProduct: (state, action) => {
             const newProducts = {
                 id: Date.now(),
-                name: prompt("Введите название продукта"),
-                description: prompt("Введите описание продукта"),
-                price: prompt("Введите цену продукта"),
-                available: prompt("Введите количество продукта"),
+                name: action.payload[0],
+                description: action.payload[1],
+                price: action.payload[2],
+                available: action.payload[3],
             }
             state.products.push(newProducts);
         },

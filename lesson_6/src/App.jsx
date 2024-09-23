@@ -6,6 +6,7 @@ import Form from "./components/Form/Form.jsx";
 import Goods from "./components/Goods/Goods.jsx";
 import FavoriteList from "./components/FavoriteList/FavoriteList.jsx";
 import CatalogProducts from "./components/CatalogProducts/CatalogProducts.jsx";
+import FormCatalogProducts from "./components/FormCatalogProducts/FormCatalogProducts.jsx";
 
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
         <Routes>
           <Route path="/" element={[<Form key={crypto.randomUUID()} />, <TodoList key={crypto.randomUUID()} />]} />
           <Route path="/favorites-goods" element={[<Goods goods={goods} key={crypto.randomUUID()}/>, <FavoriteList goods = {goods} key={crypto.randomUUID()}/>]} />
-          <Route path="/catalog-products" element={<CatalogProducts />} />
+          <Route path="/catalog-products" element={[<FormCatalogProducts key={crypto.randomUUID()}/>,<CatalogProducts key={crypto.randomUUID()}/>]} />
         </Routes>
       </main>
     </BrowserRouter>

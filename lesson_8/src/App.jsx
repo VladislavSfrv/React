@@ -14,6 +14,7 @@ import Catalog from './components/CatalogPage/Catalog';
 import { fetchGoods } from "./redux/Slices/CatalogGoods";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import NotFound from './components/NotFound/NotFound';
 
 
 
@@ -43,7 +44,7 @@ function App() {
         <Route path='/cart' element={<Card />} />
         <Route path='/reg' element={<Registration />} />
         <Route path='/catalog' element={[<Catalog key={0} goods={goods} />, <Adavantages key={1} />]} />
-        <Route path='*' element={<Registration />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />
     </BrowserRouter>

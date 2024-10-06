@@ -1467,3 +1467,11 @@ label {
     margin-right: 30px;
   }
 }
+
+.page__notfound{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: "../../images/404.png";
+}

@@ -1,30 +1,24 @@
 import { useState } from "react";
 import ProductBox from "../ProductBox/ProductBox";
+import { Link } from "react-router-dom";
+
 
 function Catalog({ goods }) {
-    const [sizeXS, setSizeXS] = useState(false);
-    const [sizeS, setSizeS] = useState(false);
-    const [sizeM, setSizeM] = useState(false);
-    const [sizeL, setSizeL] = useState(false);
+   const [selectSizes, setSelectSizes] = useState([]);
 
-    const handleToggleSize = (e) => {
-        switch (e.target.id) {
-            case "sort__check1":
-                setSizeXS(!sizeXS);
-                break;
-            case "sort__check2":
-                setSizeS(!sizeS);
-                break;
-            case "sort__check3":
-                setSizeM(!sizeM);
-                break;
-            case "sort__check4":
-                setSizeL(!sizeL);
-                break;
-            default:
-                break;
+    const handleSizeChange = (size) => {
+        if (selectSizes.includes(size)) {
+            setSelectSizes(selectSizes.filter((s) => s !== size));
+        } else {
+            setSelectSizes([...selectSizes, size]);
         }
-    }
+    };
+
+    const displayedGoods =
+        goods.filter(
+            (product) =>
+                selectSizes.length === 0 || selectSizes.includes(product.size)
+        )
 
     return (
         <>
@@ -124,19 +118,19 @@ function Catalog({ goods }) {
 
                         <div className="sort__box">
                             <div className="sort__check">
-                                <input id="sort__check1" type="checkbox" onClick={handleToggleSize} />
+                                <input id="sort__check1" type="checkbox" onChange={() => handleSizeChange("XS")}/>
                                 <label htmlFor="sort__check1">XS</label>
                             </div>
                             <div className="sort__check">
-                                <input id="sort__check2" type="checkbox" onClick={handleToggleSize} />
+                                <input id="sort__check2" type="checkbox" onChange={() => handleSizeChange("S")} />
                                 <label htmlFor="sort__check2">S</label>
                             </div>
                             <div className="sort__check">
-                                <input id="sort__check3" type="checkbox" onClick={handleToggleSize} />
+                                <input id="sort__check3" type="checkbox" onChange={() => handleSizeChange("M")}/>
                                 <label htmlFor="sort__check3">M</label>
                             </div>
                             <div className="sort__check">
-                                <input id="sort__check4" type="checkbox" onClick={handleToggleSize} />
+                                <input id="sort__check4" type="checkbox" onChange={() => handleSizeChange("L")}/>
                                 <label htmlFor="sort__check4">L</label>
                             </div>
                         </div>
@@ -154,7 +148,16 @@ function Catalog({ goods }) {
 
             </div>
 
-            {<ProductBox goods={goods} />}
+            <h2 className="product-box__heading">Fetured Items</h2>
+            <p className="product-box__text">Shop for items based on what we featured in this week</p>
+
+            {displayedGoods.map((product) => (
+                <ProductBox goods={[{ title: product.title, description: product.description, price: product.price, photo: product.photo, size: product.size }]} />
+            ))}
+
+            <div className="product-box__button">
+                <Link to="/product" className="product-box__button__text">Browse All Product</Link>
+            </div>
 
             <div className="breadcrumbs center">
                 <div className="breadcrumbs__box">

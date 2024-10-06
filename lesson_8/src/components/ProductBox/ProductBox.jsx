@@ -1,12 +1,8 @@
-import { Link } from "react-router-dom";
 
 
 function ProductBox({ goods }) {
     return (
         <section className="product-box center">
-
-            <h2 className="product-box__heading">Fetured Items</h2>
-            <p className="product-box__text">Shop for items based on what we featured in this week</p>
 
             <div className="product-box__content">
 
@@ -39,10 +35,6 @@ function ProductBox({ goods }) {
                     )
                 })}
 
-            </div>
-
-            <div className="product-box__button">
-                <Link to="/product" className="product-box__button__text">Browse All Product</Link>
             </div>
 
         </section>

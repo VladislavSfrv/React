@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 function Catalog({ goods }) {
-   const [selectSizes, setSelectSizes] = useState([]);
+    const [selectSizes, setSelectSizes] = useState([]);
 
     const handleSizeChange = (size) => {
         if (selectSizes.includes(size)) {
@@ -18,7 +18,7 @@ function Catalog({ goods }) {
         goods.filter(
             (product) =>
                 selectSizes.length === 0 || selectSizes.includes(product.size)
-        )
+        );
 
     return (
         <>
@@ -118,7 +118,7 @@ function Catalog({ goods }) {
 
                         <div className="sort__box">
                             <div className="sort__check">
-                                <input id="sort__check1" type="checkbox" onChange={() => handleSizeChange("XS")}/>
+                                <input id="sort__check1" type="checkbox" onChange={() => handleSizeChange("XS")} />
                                 <label htmlFor="sort__check1">XS</label>
                             </div>
                             <div className="sort__check">
@@ -126,11 +126,11 @@ function Catalog({ goods }) {
                                 <label htmlFor="sort__check2">S</label>
                             </div>
                             <div className="sort__check">
-                                <input id="sort__check3" type="checkbox" onChange={() => handleSizeChange("M")}/>
+                                <input id="sort__check3" type="checkbox" onChange={() => handleSizeChange("M")} />
                                 <label htmlFor="sort__check3">M</label>
                             </div>
                             <div className="sort__check">
-                                <input id="sort__check4" type="checkbox" onChange={() => handleSizeChange("L")}/>
+                                <input id="sort__check4" type="checkbox" onChange={() => handleSizeChange("L")} />
                                 <label htmlFor="sort__check4">L</label>
                             </div>
                         </div>
@@ -152,7 +152,7 @@ function Catalog({ goods }) {
             <p className="product-box__text">Shop for items based on what we featured in this week</p>
 
             {displayedGoods.map((product) => (
-                <ProductBox goods={[{ title: product.title, description: product.description, price: product.price, photo: product.photo, size: product.size }]} />
+                <ProductBox key = {crypto.randomUUID()} goods={[{ id: product.id, title: product.title, description: product.description, price: product.price, photo: product.photo, size: product.size }]} />
             ))}
 
             <div className="product-box__button">

@@ -472,7 +472,6 @@
   cursor: pointer;
 }
 .product-selection__price::after {
-  content: "$300";
   color: #F16D7F;
 }
 .product-selection__input {
@@ -578,7 +577,6 @@
   line-height: normal;
 }
 .product-selection__purchase__price-first::after {
-  content: "$900";
   padding-left: 25px;
   color: #4A4A4A;
 }
@@ -593,7 +591,6 @@
   line-height: normal;
 }
 .product-selection__purchase__price-second::after {
-  content: "$900";
   padding-left: 25px;
   color: #F16D7F;
 }
@@ -923,6 +920,7 @@ label {
   border-color: #E1E1E1;
   box-shadow: 0px 0px 10px #E1E1E1;
 }
+
 .product__picturebox__buy-button-img {
   width: 24px;
 }

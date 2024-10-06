@@ -1,6 +1,12 @@
+import { useDispatch } from "react-redux";
+import { addGoodToCart } from "../../redux/Slices/cartSlice.js";
 
 
 function ProductBox({ goods }) {
+    const dispatch = useDispatch();
+    const addToCart = (good) => {
+        dispatch(addGoodToCart(good));
+    };
     return (
         <section className="product-box center">
 
@@ -13,7 +19,7 @@ function ProductBox({ goods }) {
                             <div className="product__picturebox">
 
                                 <div className="product__picturebox__itemHover">
-                                    <button className="product__picturebox__buy-button">
+                                    <button className="product__picturebox__buy-button" onClick={() => addToCart(good)}>
                                         <img src="./../../src/images/vector.svg" alt="корзина"
                                             className="product__picturebox__buy-button-img" />
                                         Add to Cart

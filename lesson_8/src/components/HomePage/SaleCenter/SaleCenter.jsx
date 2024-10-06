@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 function SaleCenter() {
     return (
+        <>
         <section className="sale center">
 
             <div className="sale__item">
@@ -38,7 +39,12 @@ function SaleCenter() {
                 <img src="./../../src/images/advertisement004.jpg" alt="sale image" className="img__big" />
             </div>
 
+
         </section>
+        <h2 className="product-box__heading">Fetured Items</h2>
+            <p className="product-box__text">Shop for items based on what we featured in this week</p>
+
+        </>
     );
 }
 
